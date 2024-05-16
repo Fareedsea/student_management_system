@@ -31,10 +31,11 @@ do{
             message: "Pleas Enter Your Name : "
         })
         let trimedStudentName = (studentName.ans).trim().toLowerCase()
-        let studentNameCheck = student.map(obj=> obj.name)
+        let studentNameCheck = students.map(obj=> obj.name)
         if(studentNameCheck.includes(trimedStudentName)=== false){
-        if (trimedStudentName != ""){
-            baseId = "STID"+baseId
+        if (trimedStudentName !== ""){
+            baseId++
+            studentId = "STID"+baseId
             console.log("\n\t Your Account has been created")
             console.log(`Welcom, ${trimedStudentName}!`);
             let course =await inquirer.prompt({
@@ -47,7 +48,7 @@ do{
             switch(course.ans){
                 case "C.S": coursesFees=5000;
                 break;
-                case(Web 3.0): coursesFees=4000;
+                case "Web 3.0": coursesFees=4000;
                 break;
                 case "A.I": coursesFees=6000;
                 break;
@@ -61,9 +62,9 @@ do{
                 name: "ans",
                 message: "Do your Want to Enroll in this course "
             })
-            if(courseConfirm === true){
-                let Student = new student(studentId, trimedStudentName, [course.ans], coursesFees, student.push(Student);
-                console.log("You have Enrolled in this Course") );
+            if(courseConfirm.ans === true){
+                let Student = new student(studentId, trimedStudentName, [course.ans], coursesFees, students.push(Student)
+                console.log("You have Enrolled in this Course"));
             } else {
                 console.log("Envalid Name");
             }
@@ -89,6 +90,7 @@ do{
             type: "confirm",
             name: "ans",
             message: "Do you want to continue " })
+        if(userConfirm.ans=== false){
+            continueEnrolled = false}}
         
-        }
-}
+} while(continueEnrolled)
