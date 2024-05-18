@@ -67,7 +67,9 @@ do {
                     message: "Do your Want to Enroll in this course "
                 });
                 if (courseConfirm.ans === true) {
-                    let Student = new student(studentId, trimedStudentName, [course.ans], coursesFees, students.push(Student), console.log("You have Enrolled in this Course"));
+                    let Student = new student(studentId, trimedStudentName, [course.ans], coursesFees);
+                    students.push(Student);
+                    console.log("You have Enrolled in this Course");
                 }
                 else {
                     console.log("Envalid Name");
